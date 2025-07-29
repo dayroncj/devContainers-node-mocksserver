@@ -1,0 +1,10 @@
+{
+  "name": "mock-server-examples",
+  "version": "1.0.0",
+  "scripts": {
+    "mocks": "mocks-server"
+  },
+  "devDependencies": {
+    "@mocks-server/main": "^4.1.0"
+  }
+}

@@ -1,0 +1,113 @@
+[
+  {
+    "id": "get-users",
+    "url": "/api/users",
+    "method": "GET",
+    "variants": [
+      {
+        "id": "success",
+        "type": "json",
+        "options": {
+          "status": 200,
+          "body": [
+            { "id": 1, "name": "John Doe", "email": "john@example.com" },
+            { "id": 2, "name": "Jane Doe", "email": "jane@example.com" },
+            { "id": 3, "name": "Alice Smith", "email": "alice@example.com" }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "id": "get-user-detail",
+    "url": "/api/users/1",
+    "method": "GET",
+    "variants": [
+      {
+        "id": "success",
+        "type": "json",
+        "options": {
+          "status": 200,
+          "body": { "id": 1, "name": "John Doe", "email": "john@example.com", "role": "admin" }
+        }
+      },
+      {
+        "id": "not-found",
+        "type": "json",
+        "options": {
+          "status": 404,
+          "body": { "error": "User not found" }
+        }
+      }
+    ]
+  },
+  {
+    "id": "create-user",
+    "url": "/api/users",
+    "method": "POST",
+    "variants": [
+      {
+        "id": "created",
+        "type": "json",
+        "options": {
+          "status": 201,
+          "body": { "id": 4, "name": "Bob Brown", "email": "bob@example.com" }
+        }
+      },
+      {
+        "id": "bad-request",
+        "type": "json",
+        "options": {
+          "status": 400,
+          "body": { "error": "Missing required fields" }
+        }
+      }
+    ]
+  },
+  {
+    "id": "update-user",
+    "url": "/api/users/2",
+    "method": "PUT",
+    "variants": [
+      {
+        "id": "updated",
+        "type": "json",
+        "options": {
+          "status": 200,
+          "body": { "id": 2, "name": "Jane Doe Updated", "email": "jane.doe@example.com" }
+        }
+      },
+      {
+        "id": "not-found",
+        "type": "json",
+        "options": {
+          "status": 404,
+          "body": { "error": "User not found" }
+        }
+      }
+    ]
+  },
+  {
+    "id": "delete-user",
+    "url": "/api/users/3",
+    "method": "DELETE",
+    "variants": [
+      {
+        "id": "deleted",
+        "type": "json",
+        "options": {
+          "status": 204,
+          "body": {}
+        }
+      },
+      {
+        "id": "not-found",
+        "type": "json",
+        "options": {
+          "status": 404,
+          "body": { "error": "User not found" }
+        }
+      }
+    ]
+  }
+]
