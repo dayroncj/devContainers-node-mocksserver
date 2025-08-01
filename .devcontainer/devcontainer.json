@@ -13,7 +13,8 @@
 	"forwardPorts": [8080, 8888],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "npm i --D @mocks-server/main"
+	"postCreateCommand": "npm i --D @mocks-server/main",
+	"postStartCommand": "npm run mocks"
 
 	// Configure tool-specific properties.
 	// "customizations": {},
